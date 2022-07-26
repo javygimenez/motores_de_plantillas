@@ -1,0 +1,25 @@
+include layouts.pug 
+
+h2.text-primary Lista de productos:
+br
+if productos.length===0
+    div.col.text-center.bg-danger.text-light
+        h2 No se han agregado productos a la lista
+else
+    table.table.table-dark.table-striped.container-md.mt-5
+        thead
+            tr.row-cols-2
+                th(scope="col") Producto
+                th(scope="col") Precio
+                th(scope="col") Imagen
+        tbody
+            each producto in productos
+                tr
+                    td.align-middle= producto.nombre 
+                    td.align-middle= producto.precio 
+                    td.align-middle
+                        img(src=producto.imagen alt=producto.nombre)
+br
+div.col.text-center
+    a(href="./")
+        button.btn.btn-success Agregar productos

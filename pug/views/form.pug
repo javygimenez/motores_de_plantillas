@@ -1,0 +1,19 @@
+include layouts.pug
+- const labelClass = ['form-label']
+
+form.card-body.border.border-5.col-lg-4.container-md.mt-5(action="/productos" method="post")
+    h2.text-danger Ingresar Productos
+    div.mb-3
+        label(class=labelClass) Nombre
+        input.form-control(type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto")
+    div.mb-3
+        label(class=labelClass) Precio
+        input.form-control(type="number" id="precio" name="precio" placeholder="Ingrese precio del producto")
+    div.mb-3
+        label(class=labelClass) Imagen
+        input.form-control(type="url" id="imagen" name="imagen" placeholder="Ingrese una imagen del producto")
+    button.btn.btn-primary(type="submit") Agregar
+br
+div.col.text-center
+    a(href="./productos")
+      button.btn.btn-success Lista de productos
